@@ -1,0 +1,10 @@
+---
+name: plex
+
+templates:
+  pre-start.sh: bin/pre-start
+
+packages:
+ - plex
+
+properties: {}

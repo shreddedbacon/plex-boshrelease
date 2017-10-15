@@ -1,0 +1,11 @@
+---
+name: plexpy
+
+templates:
+  pre-start.sh: bin/pre-start
+  ctl.sh: bin/ctl
+
+packages:
+  - plexpy
+
+properties: {}

@@ -1,0 +1,21 @@
+plex/plexmediaserver_1.9.4.4325-1bf240a65_amd64.deb:
+  size: 107815492
+  sha: b445b651ed6d00d3b61ff4821e7ddd8b7a005758
+plexapi/plexapi/3.0.3.tar.gz:
+  size: 95747
+  sha: 4652b57993424dc349a67deebf8a4cbd7a7548f1
+plexapi/requests/v2.18.4.tar.gz:
+  size: 3040025
+  sha: c503cf6df6d98f975ca71dbb4f7c635a6d8c9ab6
+plexapi/tqdm/v4.19.2.tar.gz:
+  size: 72006
+  sha: 1e7dcbd581405f4034e75beea7fdc3a9067f8ddc
+plexapi/websocket-client/v0.43.0.tar.gz:
+  size: 193243
+  sha: f3f18d3471ea54cc97b3740fc3301d0aa66b029e
+plexpy/daemon_0.6.4-1_amd64.deb:
+  size: 98176
+  sha: 4bab95fc5f56abcbc2c86b62198971f43254530d
+plexpy/v1.4.25.tar.gz:
+  size: 35631051
+  sha: d64b0a468dbfc4310614e5f02da05da8e172107a

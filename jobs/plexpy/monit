@@ -1,0 +1,5 @@
+check process plexpy
+  with pidfile /var/vcap/sys/run/plexpy.pid
+  start program "/var/vcap/jobs/plexpy/bin/ctl start"
+  stop program "/var/vcap/jobs/plexpy/bin/ctl stop"
+  group vcap

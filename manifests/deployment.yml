@@ -1,0 +1,44 @@
+---
+name: plex
+
+releases:
+- name: plex
+  version: latest
+
+stemcells:
+- alias: default
+  os: ubuntu-trusty
+  version: latest
+
+instance_groups:
+- name: plex
+  instances: 1
+  stemcell: default
+  vm_type: default
+  azs: [z1]
+  persistent_disk_type: default
+  networks:
+  - name: default
+  jobs:
+  - name: plex
+    release: plex
+    properties: {}
+  - name: plexpy
+    release: plex
+  #  - name: backup
+  #    release: plex
+  #    properties:
+  #      backup_priv: ((backup.private_key))
+  #  - name: restore
+  #    release: plex
+
+variables:
+  - name: backup
+    type: ssh
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  serial: false
+  canary_watch_time: 1000-60000
+  update_watch_time: 1000-60000

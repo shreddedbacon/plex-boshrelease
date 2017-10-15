@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+cp plex/plexmediaserver_1.9.4.4325-1bf240a65_amd64.deb ${BOSH_INSTALL_TARGET}
