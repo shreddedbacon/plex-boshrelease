@@ -1,0 +1,9 @@
+---
+
+- type: replace
+  path: /instance_groups/name=plex/jobs/name=plex/properties?
+  value:
+    friendly_name: ((plex_friendly_name))
+    plex_email: ((plex_email))
+    plex_username: ((plex_username))
+    plex_token: ((plex_token))
