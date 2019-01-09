@@ -2,4 +2,8 @@
 
 set -e
 
-cp plex/plexmediaserver_1.9.4.4325-1bf240a65_amd64.deb ${BOSH_INSTALL_TARGET}
+# install plex on the compilation server, then copy the installation directory to bosh install target
+# job will create other necessary files to run plex outside of standard directories
+dpkg -i plex/plexmediaserver.deb
+cp -a /usr/lib/plexmediaserver ${BOSH_INSTALL_TARGET}/lib
+

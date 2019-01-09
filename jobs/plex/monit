@@ -1,0 +1,5 @@
+check process plex
+  with pidfile /var/vcap/sys/run/plex/pid
+  start program "/var/vcap/jobs/plex/bin/plex_ctl start"
+  stop program "/var/vcap/jobs/plex/bin/plex_ctl stop"
+  group vcap

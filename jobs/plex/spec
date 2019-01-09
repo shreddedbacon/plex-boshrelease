@@ -3,8 +3,15 @@ name: plex
 
 templates:
   pre-start.sh: bin/pre-start
+  plex_ctl.sh.erb: bin/plex_ctl
+  Preferences.xml.erb: etc/Preferences.xml
 
 packages:
  - plex
 
-properties: {}
+properties:
+  friendly_name:
+    default: Plex
+  plex_email:
+  plex_username:
+  plex_token:

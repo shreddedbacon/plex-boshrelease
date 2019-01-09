@@ -16,6 +16,6 @@ fi
 while sudo fuser /var/lib/dpkg/lock >/dev/null 2>&1; do
   sleep 1
 done
-dpkg -i /var/vcap/packages/plex/plexmediaserver_1.9.4.4325-1bf240a65_amd64.deb
+#dpkg -i /var/vcap/packages/plex/plexmediaserver_1.9.4.4325-1bf240a65_amd64.deb
 
 #service plexmediaserver start

@@ -4,4 +4,4 @@ name: plex
 dependencies: []
 
 files:
-  - plex/plexmediaserver_1.9.4.4325-1bf240a65_amd64.deb
+  - plex/plexmediaserver.deb
