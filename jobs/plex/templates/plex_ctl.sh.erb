@@ -1,0 +1,55 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/plex
+LOG_DIR=/var/vcap/sys/log/plex
+PIDFILE=${RUN_DIR}/pid
+
+# set a default home directory
+home=/var/vcap/store/plex
+<%- if_p("plex.application_support_directory") | appsupportdir | -%>
+# if an application_support_directory is specified use it instead of the default var/vcap/store path
+PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=<%= appsupportdir %>
+<%- end -%>
+export PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR="${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR:-${home}/Library/Application Support}"
+export PLEX_MEDIA_SERVER_HOME=/var/vcap/packages/plex/lib
+export PLEX_MEDIA_SERVER_MAX_PLUGIN_PROCS=6
+export PLEX_MEDIA_SERVER_INFO_VENDOR="BOSH Release"
+export PLEX_MEDIA_SERVER_INFO_DEVICE="BOSH Release"
+export PLEX_MEDIA_SERVER_INFO_MODEL=$(uname -m)
+export PLEX_MEDIA_SERVER_INFO_PLATFORM_VERSION=$(uname -r)
+
+# set the directory to use for plex application data, this needs to be able to be backed up somehow (S&W SHIELD?)
+if [ ! -d "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}" ]; then
+  /bin/mkdir -p "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}"
+  chown vcap:vcap "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}"
+fi
+
+# copy in the preferences file we want to use, plex will add its own things to this file afterwards, but we want to make sure we inject what we need first
+cp /var/vcap/jobs/plex/etc/Preferences.xml "${PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR}/Plex Media Server/Preferences.xml"
+
+case $1 in
+
+  start)
+    set -ex
+    mkdir -p $RUN_DIR $LOG_DIR
+
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    echo $$ > $PIDFILE
+    export LD_LIBRARY_PATH=/var/vcap/packages/plex/lib
+    exec chpst -u vcap:vcap "/var/vcap/packages/plex/lib/Plex Media Server" \
+      >>  $LOG_DIR/server.stdout.log \
+      2>> $LOG_DIR/server.stderr.log
+
+    ;;
+
+  stop)
+    kill -9 $(pgrep Plex)
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac
