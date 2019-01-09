@@ -3,10 +3,10 @@ set -e
 
 echo "Extracting plexpy..."
 tautulli_dir=$(tar tf tautulli/tautulli.tar.gz --exclude="*/*")
-tar xzvf plexpy/tautulli.tar.gz
+tar xzvf tautulli/tautulli.tar.gz
 
 
-pushd ${tautulli_dir=}
+pushd ${tautulli_dir}
   cp -a . ${BOSH_INSTALL_TARGET}
 popd
 

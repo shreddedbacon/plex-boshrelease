@@ -1,15 +1,15 @@
 plex/plexmediaserver.deb:
   size: 105175642
   sha: 1bd274026c4d7038ec57bad7c3735ce47f73b887
-tautulli/ppython-pkg-resources.deb:
-  size: 61858
-  sha: 6c8968564791369dfc236a3f6f00459a212da53d
-tautulli/ppython-setuptools.deb:
-  size: 230110
-  sha: 88915fa79f8acf3d14613639d1d256e6ddb2b2fe
 tautulli/python-openssl.deb:
   size: 81482
   sha: e1ea87b515228b7d6172700b5b748caffb65e024
+tautulli/python-pkg-resources.deb:
+  size: 61858
+  sha: 6c8968564791369dfc236a3f6f00459a212da53d
+tautulli/python-setuptools.deb:
+  size: 230110
+  sha: 88915fa79f8acf3d14613639d1d256e6ddb2b2fe
 tautulli/tautulli.tar.gz:
   size: 11621477
   sha: a00b445facaa5412600724c5b349f21e5b435284

@@ -29,7 +29,7 @@ curl -J -L -o .downloads/python-openssl.deb http://mirrors.kernel.org/ubuntu/poo
 #get tautulli
 curl -J -L -o .downloads/tautulli.tar.gz https://github.com/Tautulli/Tautulli/archive/v2.1.26.tar.gz
 
-bosh add-blob .downloads/python-pkg-resources.deb tautulli/ppython-pkg-resources.deb
-bosh add-blob .downloads/python-setuptools.deb tautulli/ppython-setuptools.deb
+bosh add-blob .downloads/python-pkg-resources.deb tautulli/python-pkg-resources.deb
+bosh add-blob .downloads/python-setuptools.deb tautulli/python-setuptools.deb
 bosh add-blob .downloads/python-openssl.deb tautulli/python-openssl.deb
 bosh add-blob .downloads/tautulli.tar.gz tautulli/tautulli.tar.gz
