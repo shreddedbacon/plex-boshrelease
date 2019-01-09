@@ -1,0 +1,9 @@
+#!/bin/bash
+
+dpkg -i /var/vcap/packages/tautulli/debs/*.deb
+
+if [ ! -d /var/vcap/store/tautulli ]
+then
+  mkdir -p /var/vcap/store/tautulli
+fi
+chown -R vcap:vcap /var/vcap/store/tautulli

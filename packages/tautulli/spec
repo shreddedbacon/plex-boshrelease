@@ -1,0 +1,10 @@
+---
+name: tautulli
+
+dependencies: []
+
+files:
+  - tautulli/tautulli.tar.gz
+  - tautulli/python-pkg-resources.deb
+  - tautulli/python-setuptools.deb
+  - tautulli/python-openssl.deb

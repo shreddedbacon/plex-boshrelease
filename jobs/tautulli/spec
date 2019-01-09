@@ -1,0 +1,50 @@
+---
+name: tautulli
+
+templates:
+  pre-start.sh.erb: bin/pre-start
+  tautulli_ctl.sh.erb: bin/tautulli_ctl
+  config.ini.erb: etc/config.ini
+
+packages:
+  - tautulli
+
+properties:
+  general:
+    http_port:
+      description: "Port to listen on for http or https(if enabled)"
+      default: 8181
+    https_ip:
+      description: "comma seperated list of ip addresses for https"
+    http_username:
+      default: admin
+      description: "username for admin access to tautulli (required for plex.tv auth)"
+    http_password:
+      default: admin
+      description: "username for admin access to tautulli (required for plex.tv auth)"
+    https_domain:
+      description: "comma seperated list of domains for https"
+    themoviedb_apikey:
+      description: "api key for themoviedb"
+  pms:
+    pms_token:
+      description: "plex auth token"
+    pms_name:
+      description: "name of plex media server"
+    pms_url:
+      description: "url of plex media server"
+    pms_plexpass:
+      description: "1 or 0, 1 means plex pass user"
+      default: 0
+    pms_port:
+      description: "port of pms server to talk to"
+      default: 32400
+    pms_is_remote:
+      description: "if plex is remote, set to 1"
+      default: 0
+    pms_ssl:
+      description: "if plex is ssl enabled, set to 1"
+      default: 0
+    pms_ip:
+      description: "ip address of plex media server"
+

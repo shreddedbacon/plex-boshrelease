@@ -1,0 +1,5 @@
+check process tautulli
+  with pidfile /var/vcap/sys/run/tautulli.pid
+  start program "/var/vcap/jobs/tautulli/bin/tautulli_ctl start"
+  stop program "/var/vcap/jobs/tautulli/bin/tautulli_ctl stop"
+  group vcap
