@@ -22,19 +22,6 @@ instance_groups:
   jobs:
   - name: plex
     release: plex
-    properties: {}
-  - name: plexpy
-    release: plex
-  #  - name: backup
-  #    release: plex
-  #    properties:
-  #      backup_priv: ((backup.private_key))
-  #  - name: restore
-  #    release: plex
-
-variables:
-  - name: backup
-    type: ssh
 
 update:
   canaries: 1
