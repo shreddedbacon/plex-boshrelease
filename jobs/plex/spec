@@ -12,6 +12,18 @@ packages:
 properties:
   friendly_name:
     default: Plex
+    description: "a friendly name for this server to show up in plex web app"
   plex_email:
+    description: "plex.tv email associated to token"
   plex_username:
+    description: "plex.tv username associated to token"
   plex_token:
+    description: "plex auth token"
+  plex_remote:
+    default: True
+  plex_machine_identifier:
+    description: "uuidgen an identifier used to identify this server(s)"
+  plex_processed_machine_identifier:
+    description: "sha1sum random identifier used to identify this server(s)"
+  plex_anonymous_machine_identifier:
+    description: "uuidgen an identifier used to identify this server(s)"
