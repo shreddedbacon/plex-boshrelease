@@ -4,12 +4,17 @@ name: tautulli
 templates:
   pre-start.sh.erb: bin/pre-start
   tautulli_ctl.sh.erb: bin/tautulli_ctl
-  config.ini.erb: etc/config.ini
+  config.ini: etc/config.ini
+  server.crt.erb: ssl/server.crt
+  server.key.erb: ssl/server.key
 
 packages:
   - tautulli
 
 properties:
+  ssl:
+    certificate:
+    private_key:
   general:
     http_port:
       description: "Port to listen on for http or https(if enabled)"

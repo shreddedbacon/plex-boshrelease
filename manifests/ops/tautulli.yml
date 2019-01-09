@@ -1,0 +1,38 @@
+---
+
+- type: replace
+  path: /instance_groups/name=plex/jobs/-
+  value:
+    name: tautulli
+    release: plex
+    properties:
+      ssl:
+        certificate: ((tautulli_tls.certificate))
+        private_key: ((tautulli_tls.private_key))
+      general:
+        http_port: 8181
+        https_ip: "127.0.0.1"
+        http_username: admin
+        http_password: admin
+        https_domain: "tautulli.local,10.244.0.2"
+        themoviedb_apikey: e9a6655bae34bf694a0f3e33338dc28e
+      pms:
+        pms_token: ((plex_token))
+        pms_name: ((plex_friendly_name))
+        pms_url: http://127.0.0.1:32400/
+        pms_plexpass: 1
+        pms_port: 32400
+        pms_is_remote: 0
+        pms_ssl: 0
+        pms_ip: 127.0.0.1
+
+- type: replace
+  path: /variables?/-
+  value:
+    name: tautulli_tls
+    type: certificate
+    options:
+      self_sign: true
+      common_name: tautulli.local
+  sha: 88915fa79f8acf3d14613639d1d256e6ddb2b2fe
+      alternative_names: [tautulli.local, localhost, 127.0.0.1, 10.244.0.2]
