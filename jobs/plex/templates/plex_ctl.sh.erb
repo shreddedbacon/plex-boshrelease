@@ -6,7 +6,7 @@ PIDFILE=${RUN_DIR}/pid
 
 # set a default home directory
 home=/var/vcap/store/plex
-<%- if_p("plex.application_support_directory") do | appsupportdir | -%>
+<%- if_p("application_support_directory") do | appsupportdir | -%>
 # if an application_support_directory is specified use it instead of the default var/vcap/store path
 PLEX_MEDIA_SERVER_APPLICATION_SUPPORT_DIR=<%= appsupportdir %>
 <%- end -%>

@@ -5,11 +5,11 @@
   PlexOnlineMail="<%= p("plex_email") %>"
   PlexOnlineUsername="<%= p("plex_username") %>"
   PlexOnlineToken="<%= p("plex_token") %>"
-  <%- if_p("plex_remote") do |remote| -%>
-  PublishServerOnPlexOnlineKey="1"
-  <%- end -%>
   MachineIdentifier="<%= p("plex_machine_identifier") %>"
   ProcessedMachineIdentifier="<%= p("plex_processed_machine_identifier") %>"
   AnonymousMachineIdentifier="<%= p("plex_anonymous_machine_identifier") %>"
+<%- if_p("plex_remote") do |remote| -%>
+  PublishServerOnPlexOnlineKey="1"
+<%- end -%>
   AcceptedEULA="1"
 />
