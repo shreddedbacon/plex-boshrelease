@@ -32,7 +32,12 @@ curl -s -X POST \
 ```
 
 LibraryType: movie, shows, etc..
-LibraryAgent: com.plexapp.agents.imdb, com.plexapp.agents.<etc..>
+LibraryAgent:
+  com.plexapp.agents.none
+  com.plexapp.agents.imdb
+  com.plexapp.agents.themoviedb
+  com.plexapp.agents.thetvdb
+  com.plexapp.agents.<etc..>
 LibraryScanner: "Plex Movie Scanner"
 LibraryLanguage: en, de, etc.
 LibraryLocation: /path/to/library
