@@ -19,12 +19,12 @@
       pms:
         pms_token: ((plex_token))
         pms_name: ((plex_friendly_name))
-        pms_url: http://127.0.0.1:32400/
+        pms_url: http://10.244.0.2:32400/
         pms_plexpass: 1
         pms_port: 32400
         pms_is_remote: 0
         pms_ssl: 0
-        pms_ip: 127.0.0.1
+        pms_ip: 10.244.0.2
 
 - type: replace
   path: /variables?/-
