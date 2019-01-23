@@ -3,7 +3,12 @@
 ## Deploy
 ```
 bosh upload-release <plex-boshrelease.tgz>
-bosh -d plex deploy manifests/deployment.yml -o manifests/ops/plex-properties.yml -v plex_friendly_name=MyPlex -v plex_token=<token> -v plex_email=my@email.com -v plex_username=myplex.tvusername
+bosh -d plex deploy manifests/deployment.yml \
+  -o manifests/ops/plex-properties.yml \
+  -v plex_friendly_name=MyPlex \
+  -v plex_token=<token> \
+  -v plex_email=my@email.com \
+  -v plex_username=myplex.tvusername
 ```
 
 ## OLD INFORMATION
